@@ -1,0 +1,40 @@
+
+# extension settings
+plugin.tx_bccodehighlighter {
+	view {
+		templateRootPath = {$plugin.tx_bccodehighlighter.view.templateRootPath}
+		partialRootPath = {$plugin.tx_bccodehighlighter.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_bccodehighlighter.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_bccodehighlighter.persistence.storagePid}
+	}
+}
+
+# upload controller interface
+bcCodeHighlighterController = PAGE
+bcCodeHighlighterController {
+    typeNum = 188746
+    config {
+        debug = 0
+        xhtml_cleaning = 0
+        admPanel = 0
+        no_cache = 1
+        language = de
+    }
+
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = BcCodeHighlighter
+        pluginName = Result
+        vendorName = BC
+        controller = Result
+        action = show
+        switchableControllerActions {
+            Result {
+                1 = show
+            }
+        }
+    }
+}

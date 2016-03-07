@@ -1,0 +1,46 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Einstellungen</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.custom>
+                        <TCEforms>
+                            <exclude>0</exclude>
+                            <label>Elementauswahl</label>
+                            <config>
+                                <type>user</type>
+                                <userFunc>BC\BcCodeHighlighter\FlexForm\RecordSelection->renderSelector</userFunc>
+                            </config>
+                        </TCEforms>
+                    </settings.custom>
+                </el>
+            </ROOT>
+        </sDEF>
+        <sSettings>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.result>
+                        <TCEforms>
+                            <exclude>0</exclude>
+                            <label>Show Result</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.result>
+                </el>
+            </ROOT>
+        </sSettings>
+    </sheets>
+</T3DataStructure>

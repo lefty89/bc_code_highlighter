@@ -1,0 +1,37 @@
+<html xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+    <ul>
+        <f:for each="{sources}" as="s" iteration="it">
+            <li class="{f:if(condition:'{it.isFirst}', then:'active')}">
+                <a href="#tab-{it.index}">
+                    {s.name}
+                </a>
+            </li>
+        </f:for>
+        <f:if condition="{cuid}">
+            <li>
+                <a href="#tab-result">
+                    Result
+                </a>
+            </li>
+        </f:if>
+    </ul>
+    <div class="sources-container">
+        <f:for each="{sources}" as="s" iteration="it">
+            <div id="tab-{it.index}" class="{f:if(condition:'{it.isFirst}', then:'active')} tab-content">
+                <pre class="language-{s.ext}"><code>{s.code}</code></pre>
+            </div>
+        </f:for>
+        <f:if condition="{cuid}">
+            <div id="tab-result" class="tab-content">
+                <iframe sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+                        src="{f:uri.action(action:'show', controller:'Result' arguments:'{cuid:cuid}', pageType:'188746')}">
+                </iframe>
+            </div>
+        </f:if>
+    </div>
+</f:section>
