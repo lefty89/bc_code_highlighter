@@ -11,7 +11,7 @@ if (!defined('TYPO3_MODE')) {
 	),
 	// non-cacheable actions
 	array(
-		'Preview' => 'render',
+		'Preview' => '',
 	)
 );
 
@@ -23,6 +23,6 @@ if (!defined('TYPO3_MODE')) {
 	),
 	// non-cacheable actions
 	array(
-		'Result' => 'show',
+		'Result' => '',
 	)
 );
