@@ -68,18 +68,18 @@ class ResultController extends ActionController {
 		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pr */
 		$pr = $GLOBALS['TSFE']->getPageRenderer();
 
-		/** @var Object $d */
-		foreach ($data as $d) {
+		/** @var Object $v */
+		foreach ($data as $k => $v) {
 
-			switch($d->ext) {
+			switch($v->ext) {
 				case 'css': {
-					$pr->addCssInlineBlock('css', $this->getCode($d)); break;
+					$pr->addCssInlineBlock("css-$k", $this->getCode($v)); break;
 				}
 				case 'js': {
-					$pr->addJsInlineCode('js', $this->getCode($d)); break;
+					$pr->addJsInlineCode("js-$k", $this->getCode($v)); break;
 				}
 				case 'html': {
-					$this->view->assign('markup', $this->getCode($d));  break;
+					$this->view->assign('markup', $this->getCode($v));  break;
 				}
 			}
 		}
