@@ -2,6 +2,9 @@ $header-color: #323232;
 $spinner-color: #242424;
 
 .bugcluster-code-highlighter {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
   border: 4px solid #383838;
 
   ul {
@@ -77,11 +80,4 @@ $spinner-color: #242424;
       }
     }
   }
-
-}
-
-#content_container {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
 }
