@@ -57,7 +57,7 @@ class PreviewController extends ActionController {
 
 			// replace line breaks and encode
 			$code  = htmlentities($this->getCode($d));
-			$raw = str_replace(PHP_EOL, '&#x000D;', $code);
+			$raw = str_replace(array("\r\n", "\r", "\n"), "&#x000D;", $code);
 
 			if ($d->show) {
 				array_push($sources, array(
