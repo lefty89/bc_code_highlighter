@@ -20,12 +20,3 @@ TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($extension
 	'Preview',
 	'Bugcluster Code Highlighter Preview'
 );
-
-/**
- * Flexform for Preview Plugin
- */
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	$_EXTKEY,
-	'Result',
-	'Bugcluster Code Highlighter Result'
-);
