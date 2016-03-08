@@ -18,5 +18,5 @@ TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($extension
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	$_EXTKEY,
 	'Preview',
-	'Bugcluster Code Highlighter Preview'
+	'Bugcluster Code Highlighter'
 );
