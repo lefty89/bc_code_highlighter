@@ -5,14 +5,14 @@
 /**
  * Angular module for custom flexform
  */
-require(['jquery','angular'], function($, angular) {
+require(['angular'], function(angular) {
 
     angular.module("SelectorModule", [])
         .directive( 'editInPlace', function() {
             return {
                 restrict: 'E',
                 scope: { value: '=' },
-                template: '<span ng-click="edit()" ng-bind="value"></span><input class="form-control" ng-model="value"></input>',
+                template: '<span class="label label-info" ng-click="edit()" ng-bind="value"></span><input class="form-control" ng-model="value"></input>',
                 link: function ( $scope, element, attrs ) {
                     // Let's get a reference to the input element, as we'll want to reference it.
                     var inputElement = angular.element( element.children()[1] );
@@ -45,12 +45,6 @@ require(['jquery','angular'], function($, angular) {
             };
         })
         .controller("SelectorController", function ($scope) {
-
-            /**
-             * the current selected item
-             * @type {int}
-             */
-            $scope.currentItem = 0;
 
             /**
              * serializes list
@@ -114,11 +108,11 @@ require(['jquery','angular'], function($, angular) {
                 // create new item
                 var item = {
                     id: 1,
-                    name: "test" + (Math.floor(Math.random() * 6) + 1),
+                    name: "Unnamed",
                     url: "",
                     code: "",
                     external: false,
-                    show: false,
+                    show: true,
                     collapsed: true,
                     ext: 'html'
                 };
@@ -131,7 +125,7 @@ require(['jquery','angular'], function($, angular) {
              * removes an item from the list
              * @param {int} index
              */
-            $scope.remove = function() {
+            $scope.remove = function(index) {
                 // removes from list
                 $scope.items.splice(index, 1);
             };

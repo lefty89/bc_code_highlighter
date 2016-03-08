@@ -9,7 +9,7 @@
             <tr>
             <th class="text-right" colspan="3">
                 <a class="btn btn-default" href="#" ng-click="add()">
-                    <span title="Add" class="t3-icon fa fa-plus-square"></span>
+                    <span title="Add" class="t3-icon fa fa-plus-square"></span> Add new
                 </a>
             </th>
         </tr>
@@ -18,17 +18,31 @@
             <tr ng-repeat="item in items track by $index">
                 <td>
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <edit-in-place value="item.name"></edit-in-place>
+                                    <div class="form-group">
+                                        <div class="control-label col-xs-4">
+                                            <label for="Name" class="text-muted">Name:</label>
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <edit-in-place value="item.name"></edit-in-place>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <edit-in-place value="item.ext"></edit-in-place>
+                                    <div class="form-group">
+                                        <div class="control-label col-xs-6">
+                                            <label for="Extension" class="text-muted">Extension:</label>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <edit-in-place value="item.ext"></edit-in-place>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <div class="btn-group btn-group-sm pull-right" role="group">
                                 <a class="btn btn-default" href="#"  ng-click="collapseItem($index)" ng-class="item.collapsed ? 'active' : ''">
                                     <span title="Collapse" class="t3-icon fa fa-expand"></span>
