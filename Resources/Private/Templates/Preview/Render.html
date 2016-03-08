@@ -23,7 +23,7 @@
     <div class="sources-container">
         <f:for each="{sources}" as="s" iteration="it">
             <div id="tab-{it.index}" class="{f:if(condition:'{it.isFirst}', then:'active')} tab-content">
-                <pre class="language-{s.ext}"><code>{s.code}</code></pre>
+                <pre class="language-{s.ext}"><code><f:format.raw>{s.code}</f:format.raw></code></pre>
             </div>
         </f:for>
         <f:if condition="{cuid}">

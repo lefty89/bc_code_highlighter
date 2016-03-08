@@ -55,10 +55,14 @@ class PreviewController extends ActionController {
 		/** @var Object $d */
 		foreach ($data as $d) {
 
+			// replace line breaks and encode
+			$code  = htmlentities($this->getCode($d));
+			$raw = str_replace(PHP_EOL, '&#x000D;', $code);
+
 			if ($d->show) {
 				array_push($sources, array(
 					'name' => $d->name,
-					'code' => $this->getCode($d),
+					'code' => $raw,
 					'ext'  => $d->ext
 				));
 			}
