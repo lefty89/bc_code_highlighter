@@ -57,9 +57,8 @@ class ResultController extends ActionController {
 	 */
 	private function getCode($item)
 	{
-		return (!$item->external) ? $item->code : file_get_contents($item->url);
+		return (!$item->external) ? $item->code : (file_get_contents($item->url) ?: "No Code loaded");
 	}
-
 
 	/**
 	 * @param array $data

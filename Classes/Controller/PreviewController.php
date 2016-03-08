@@ -77,7 +77,7 @@ class PreviewController extends ActionController {
 	 */
 	private function getCode($item)
 	{
-		return (!$item->external) ? $item->code : file_get_contents($item->url);
+		return (!$item->external) ? $item->code : (file_get_contents($item->url) ?: "No Code loaded");
 	}
 
 	/**
@@ -94,9 +94,6 @@ class PreviewController extends ActionController {
 		// required css files
 		$pr->addCssFile($extPath.'css/prism-cb.css');
 		$pr->addCssFile($extPath.'css/style.css');
-
-		// add inline blobby config
-		//$pr->addJsInlineCode("TYPO3_BcCodeHighlighter_VARS", $this->getInlineConfig());
 
 		// required javascript files
 		$pr->addJsFooterFile($extPath.'js/prism.js');
